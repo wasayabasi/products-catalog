@@ -3,7 +3,8 @@ from langchain_experimental.agents.agent_toolkits import create_csv_agent
 from langchain_openai import ChatOpenAI, OpenAI
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+#os.environ["OPENAI_API_KEY"] = ""
+os.environ["openai_api_key"] = st.secrets["openai_api_key"]
 
 
 system_message = {
@@ -15,7 +16,7 @@ system_message = {
 
 agent = create_csv_agent(
     ChatOpenAI(temperature=0, 
-               openai_api_key=os.environ["OPENAI_API_KEY"], 
+               openai_api_key=os.environ["openai_api_key"], 
                model="gpt-3.5-turbo-0613"),
     "products_catalog.csv",
     verbose=True,
