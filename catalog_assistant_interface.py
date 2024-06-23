@@ -1,5 +1,5 @@
 import streamlit as st
-from dash_system import get_response
+from catalog_agent_setup import get_response
 
 # Heading
 st.title("Product Catalog Dataset Assistant")
